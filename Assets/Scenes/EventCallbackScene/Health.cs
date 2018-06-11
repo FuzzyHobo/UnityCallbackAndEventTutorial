@@ -25,12 +25,7 @@ namespace EventCallbacks
         void Die()
         {
             // I am dying for some reason.
-
-            UnitDeathEvent udei = new UnitDeathEvent();
-            udei.Description = "Unit "+ gameObject.name +" has died.";
-            udei.UnitGO = gameObject;
-            udei.FireEvent();
-
+            new UnitDeathEvent(gameObject);
             Destroy(gameObject);
         }
     }

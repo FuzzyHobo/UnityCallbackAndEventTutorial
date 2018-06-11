@@ -10,11 +10,11 @@ namespace EventCallbacks
         // Use this for initialization
         void Start()
         {
-            UnitDeathEvent.RegisterListener(OnUnitDied);
+            UnitDeathEvent.Listeners += (OnUnitDied);
         }
 
         void OnDestroy() {
-            UnitDeathEvent.UnregisterListener(OnUnitDied);
+            UnitDeathEvent.Listeners -= (OnUnitDied);
         }
 
         // Update is called once per frame
